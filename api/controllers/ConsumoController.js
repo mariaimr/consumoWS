@@ -19,11 +19,11 @@
 
 module.exports = {
 	index: function(req, res) {
-    //var OrgSistemasWebServiceClient = java.import("co.edu.udea.wsClient.OrgSistemasWebServiceClient");
-    //var clientWS = new OrgSistemasWebServiceClient("452624219667108910919947", true);
-    //clientWS.addParamSync("cedula", "1026145787");
-    //var user = clientWS.obtenerBeanSync("consultapersonamares", "6aaa5e631067cdda423396987f54f9df96625150", null);
-		var user= 'Maria Isabel';
+    var OrgSistemasWebServiceClient = java.import("co.edu.udea.wsClient.OrgSistemasWebServiceClient");
+    var clientWS = new OrgSistemasWebServiceClient("452624219667108910919947", true);
+    clientWS.addParamSync("cedula", "1026145787");
+    var user = clientWS.obtenerBeanSync("consultapersonamares", "6aaa5e631067cdda423396987f54f9df96625150", null);
+		//var user= 'Maria Isabel';
 		res.view({
       'usuario': user
     });
